@@ -38,7 +38,7 @@ function ArticleContent(props) {
                     <meta itemProp="image" content={data?.thumbnail} />
 
                     {/* <!-- Facebook Meta Tags --> */}
-                    <meta property="og:url" content={router.asPath} />
+                    <meta property="og:url" content={url} />
                     <meta property="og:type" content="website" />
                     <meta property="og:title" content={title} />
                     <meta property="og:description" content={update.slice(0,40)} />
