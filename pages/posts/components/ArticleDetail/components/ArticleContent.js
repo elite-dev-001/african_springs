@@ -12,10 +12,10 @@ function ArticleContent(props) {
     const [update, setUpdate] = useState('')
     // const [curr, setNews] = useState(`${news.trim()}`)
     const router = useRouter()
-    console.log(router.asPath)
+    // console.log(router.asPath)
     const host = 'https://willowy-faun-ad3006.netlify.app';
     const url = `${host}${router.asPath}`
-    console.log(url)
+    // console.log(url)
 
     useEffect(() => {
         if(news !== undefined){
@@ -27,36 +27,13 @@ function ArticleContent(props) {
         <div className="total-views">
             <div>
                 {/* <SuperSEO title={`Wilson’s son, Uzodinma suggests Nigeria’s dissolution months to 2023 elections`} description={news.slice(0, 40)} /> */}
-                <Head>
-                    {/* <title> {data['title']} </title> */}
-                    <title>{title}</title>
-                    <meta name="description" content={news} />
-
-                    {/* <!-- Google / Search Engine Tags --> */}
-                    <meta itemProp="name" content={title} />
-                    <meta itemProp="description" content={update.slice(0,40)} />
-                    <meta itemProp="image" content={data?.thumbnail} />
-
-                    {/* <!-- Facebook Meta Tags --> */}
-                    <meta property="og:url" content={url} />
-                    <meta property="og:type" content="website" />
-                    <meta property="og:title" content={title} />
-                    <meta property="og:description" content={update.slice(0,40)} />
-                    <meta property="og:image" content={data?.thumbnail} />
-
-                    {/* <!-- Twitter Meta Tags --> */}
-                    <meta name="twitter:card" content="summary_large_image" />
-                    <meta name="twitter:title" content={title} />
-                    <meta name="twitter:description" content={update.slice(0,40)} />
-                    <meta name="twitter:image" content={data?.thumbnail} />
-
-                </Head>
+                
                 
             {/* <div> */}
                     <RWebShare
                         data={{
                         // text: "Like humans, flamingos make friends for life",
-                        url: router.asPath,
+                        url: url,
                         title: title,
                         }}
                         onClick={() => console.log("shared successfully!")} >

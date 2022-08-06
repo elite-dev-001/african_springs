@@ -4,40 +4,57 @@ import Loading from '../Loading'
 import BreadCrumb from './components/BreadCrumb'
 import Detail from './components/ArticleDetail/Detail'
 import Profile from './components/Profile'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 
 
 export default function SinglePosts({post}) {
   const router = useRouter()
   const {category} = router.query
-  // const [loading, setLoading] = useState(false)
-  // const [post, setPost] = useState({})
 
-  // useEffect(() => {
-  //   setLoading(true)
-  //   axios.get(`https://africanspringsapi.herokuapp.com/api/post/get/single/post/${pid}`).then((res) => {
-  //     console.log(res)
-  //     setPost(res.data[0])
-
-  //     setLoading(false)
-  //   }).catch((err) => {
-  //     console.log(err)
-  //     setLoading(false)
-  //   })
-  // }, [pid])
+    // console.log(router.asPath)
+    const host = 'https://willowy-faun-ad3006.netlify.app';
+    const url = `${host}${router.asPath}`
+    // console.log(url)
   return (
-    <section className='pb-80'>
-      <div className='container'>
-        <div className='row'>
-          <BreadCrumb category={category} />
-          <div className='col-md-8'>
-            <Detail data={post} />
-            <Profile img={post['posterImage']} author={post['author']} />
+    <>
+      <Head>
+        {/* <title> {data['title']} </title> */}
+        <title>{post?.title}</title>
+        <meta name="description" content={post?.news.slice(0, 40)} />
+
+        {/* <!-- Google / Search Engine Tags --> */}
+        <meta itemProp="name" content={post?.title} />
+        <meta itemProp="description" content={post?.news.slice(0,40)} />
+        <meta itemProp="image" content={post?.thumbnail} />
+
+        {/* <!-- Facebook Meta Tags --> */}
+        <meta property="og:url" content={url} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={post?.title} />
+        <meta property="og:description" content={post?.news.slice(0,40)} />
+        <meta property="og:image" content={post?.thumbnail} />
+
+        {/* <!-- Twitter Meta Tags --> */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post?.title} />
+        <meta name="twitter:description" content={post?.news.slice(0,40)} />
+        <meta name="twitter:image" content={post?.thumbnail} />
+
+      </Head>
+      <section className='pb-80'>
+        <div className='container'>
+          <div className='row'>
+            <BreadCrumb category={category} />
+            <div className='col-md-8'>
+              <Detail data={post} />
+              <Profile img={post['posterImage']} author={post['author']} />
+            </div>
+            <div className='col-md-4'></div>
           </div>
-          <div className='col-md-4'></div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }
 
