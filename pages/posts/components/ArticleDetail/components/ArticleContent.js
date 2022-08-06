@@ -3,6 +3,7 @@ import ReactPlayer from 'react-player'
 import { RWebShare } from 'react-web-share'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import absoluteUrl from "next-absolute-url";
 // import { Helmet } from 'react-helmet'
 // import { FacebookIcon, FacebookShareButton } from 'react-share'
 // import { SuperSEO } from 'react-super-seo'
@@ -12,7 +13,11 @@ function ArticleContent(props) {
     const [update, setUpdate] = useState('')
     // const [curr, setNews] = useState(`${news.trim()}`)
     const router = useRouter()
-    // console.log(router.asPath)
+    console.log(router.asPath)
+    const host = absoluteUrl()
+    console.log(host['origin'])
+    const origin = host.origin
+    console.log(`${origin}${router.asPath}`)
 
     useEffect(() => {
         if(news !== undefined){
@@ -35,7 +40,7 @@ function ArticleContent(props) {
                     <meta itemProp="image" content={data?.thumbnail} />
 
                     {/* <!-- Facebook Meta Tags --> */}
-                    <meta property="og:url" content={router.asPath} />
+                    <meta property="og:url" content={`${origin}${router.asPath}`} />
                     <meta property="og:type" content="website" />
                     <meta property="og:title" content={title} />
                     <meta property="og:description" content={update.slice(0,40)} />

@@ -1387,6 +1387,11 @@
   "resolved" "https://registry.npmjs.org/natural-compare/-/natural-compare-1.4.0.tgz"
   "version" "1.4.0"
 
+"next-absolute-url@^1.2.2":
+  "integrity" "sha512-Z2+LZXQTthhw2je9u4eq8QWXxXd57a6b54x9exBfQX4Dct6YxaMjcXZWNLHd9AOlCue84EsMpdSGP7wACqUnPg=="
+  "resolved" "https://registry.npmjs.org/next-absolute-url/-/next-absolute-url-1.2.2.tgz"
+  "version" "1.2.2"
+
 "next@12.2.3":
   "integrity" "sha512-TA0tmSA6Dk6S6kfvCNbF7CWYW8468gZUxr/3/30z4KvAQbXnl2ASYZElVe7q/hBW/1F1ee0tSBlHa4/sn+ZIBw=="
   "resolved" "https://registry.npmjs.org/next/-/next-12.2.3.tgz"
