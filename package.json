@@ -9,9 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.2",
+    "@fortawesome/free-solid-svg-icons": "^6.1.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "axios": "^0.27.2",
     "next": "12.2.3",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.34.0",
+    "react-player": "^2.10.1",
+    "react-slick": "^0.29.0",
+    "react-use": "^17.4.0",
+    "react-web-share": "^1.1.6",
+    "spinners-react": "^1.0.7"
   },
   "devDependencies": {
     "eslint": "8.21.0",

@@ -90,26 +90,26 @@ a:hover {
     color: #000;
 }
 .bg-news-image {
-    background-image: url(../public/images/bg_section_04.jpg);
+    background-image: url(../images/bg_section_04.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
 }
 .bg-travel-image-center {
-    background-image: url(../public/images/bg_section_01.png);
+    background-image: url(../images/bg_section_01.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 .bg-travel-image-left {
-    background-image: url(../public/images/bg_section_02.png);
+    background-image: url(../images/bg_section_02.png);
     background-position: bottom left;
     background-repeat: no-repeat;
     background-size: contain;
 }
 .bg-travel-image-right {
-    background-image: url(../public/images/bg_section_05.jpg);
+    background-image: url(../images/bg_section_05.jpg);
     background-position: bottom right;
     background-repeat: no-repeat;
     background-size: 233px auto;
@@ -9162,9 +9162,9 @@ a.text-dark:hover {
 .slick-arrow.slick-hidden {
     display: none;
 }
-/* .slick-loading .slick-list {
+.slick-loading .slick-list {
     background: #fff url(../../public/ajax-loader.html) center center no-repeat;
-} */
+}
 .slick-next,
 .slick-prev {
     position: absolute;
@@ -10248,7 +10248,7 @@ input[type="number"] {
 .error-content h1 {
     font-size: 150px;
     font-weight: 900;
-    background: url(../public/images/bg_section_03.jpg) no-repeat;
+    background: url(../images/bg_section_03.jpg) no-repeat;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-background-clip: text;
@@ -13370,7 +13370,7 @@ input[type="number"] {
     background-color: #1b1c26;
 }
 .bg-theme-three {
-    background-image: url(../public/images/bg-news.jpg);
+    background-image: url(../images/bg-news.jpg);
     width: 100%;
     background-attachment: fixed !important;
     background-position: center center;
@@ -14346,7 +14346,7 @@ body.offcanvas-active {
     height: 100vh;
     min-height: 400px;
     background-size: cover;
-    background-image: url(../public/images/index.jpg);
+    background-image: url(../images/index.jpg);
     background-position: top center;
     background-attachment: fixed;
 }
@@ -14492,7 +14492,7 @@ body.offcanvas-active {
     background-color: #000;
     padding-top: 240px;
     padding-bottom: 100px;
-    background-image: url(../public/images/home02.jpg);
+    background-image: url(../images/home02.jpg);
     background-position: center center;
     background-size: cover;
 }
