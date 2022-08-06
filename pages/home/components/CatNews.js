@@ -41,7 +41,7 @@ function CatNews(props) {
                                 </a>
                             </h5>
                             <p className="d-none d-lg-block d-xl-block mb-0">
-                                {news}
+                                {news?.slice(0, 160)}
                             </p>
 
                         </div>
