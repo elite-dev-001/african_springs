@@ -13,7 +13,7 @@ export default function SinglePosts({post}) {
   const {category} = router.query
 
     // console.log(router.asPath)
-    const host = 'https://willowy-faun-ad3006.netlify.app';
+    const host = 'https://www.africansprings.org';
     const url = `${host}${router.asPath}`
     // console.log(url)
   return (

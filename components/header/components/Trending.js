@@ -65,35 +65,35 @@ function Trending({trending}) {
 
 export default Trending
 
-export async function getStaticPaths() {
+// export async function getStaticPaths() {
     
-    const res = await fetch('https://africanspringsapi.herokuapp.com/api/post/get/all/news?trend=true')
-    const data = await res.json()
+//     const res = await fetch('https://africanspringsapi.herokuapp.com/api/post/get/all/news?trend=true')
+//     const data = await res.json()
   
   
-    const paths = data['results'].map(post => {
-      return {
-        params: {pid: post._id.toString()}
-      }
-    })
+//     const paths = data['results'].map(post => {
+//       return {
+//         params: {pid: post._id.toString()}
+//       }
+//     })
   
     
   
-    return {
-      paths,
-      fallback: false,
-    }
-  }
+//     return {
+//       paths,
+//       fallback: false,
+//     }
+//   }
 
-  export async function getStaticProps({ params }) {
+  export async function getStaticProps() {
     // console.log('params', params)
-    const res = await fetch(`https://africanspringsapi.herokuapp.com/api/post/get/single/post/${params['pid']}`)
+    const res = await fetch('https://africanspringsapi.herokuapp.com/api/post/get/all/news?trend=true')
     const post = await res.json()
     // console.log('post',post)
   
     // console.log(articles)
   
     return {
-      props: {trending: post[0]}
+      props: {trending: post}
     }
   }
