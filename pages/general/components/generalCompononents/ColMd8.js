@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import Link from 'next/link'
 
 
 function ColMd8() {
@@ -47,7 +48,7 @@ function ArticleEntry(props) {
   return (
     <div className="article__entry">
       <div className="article__image">
-          <a href={`/article/${category}/${id} `}>
+          <a href={`/posts/${id}?category=${category} `}>
               <img src={img} alt="" className="img-fluid" />
           </a>
       </div>
@@ -69,14 +70,14 @@ function ArticleEntry(props) {
 
           </ul>
           <h5>
-              <a href={`/article/${category}/${id} `}>
+              <a href={`/posts/${id}?category=${category} `}>
                   {title}
               </a>
           </h5>
           <p>
               {news.slice(0, 100)}
           </p>
-          <a href={`/article/${category}/${id} `} className="btn btn-outline-primary mb-4 text-capitalize"> read more</a>
+          <a href={`/posts/${id}?category=${category} `} className="btn btn-outline-primary mb-4 text-capitalize"> read more</a>
       </div>
   </div>
   );
