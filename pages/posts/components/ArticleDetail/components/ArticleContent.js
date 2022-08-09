@@ -13,7 +13,7 @@ function ArticleContent(props) {
     // const [curr, setNews] = useState(`${news.trim()}`)
     const router = useRouter()
     // console.log(router.asPath)
-    const host = 'https://willowy-faun-ad3006.netlify.app';
+    const host = 'https://www.africansprings.org';
     const url = `${host}${router.asPath}`
     // console.log(url)
 
