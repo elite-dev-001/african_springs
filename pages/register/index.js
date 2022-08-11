@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { SpinnerRoundFilled } from 'spinners-react';
@@ -149,8 +150,8 @@ function Register() {
                                 <div className="form-group">
                                     <label className="custom-control custom-checkbox"> <input type="checkbox" required
                                             className="custom-control-input"  />
-                                        <span className="custom-control-label"> I am agree with <a href="#">terms and
-                                                contitions</a> </span>
+                                        <span className="custom-control-label"> I am agree with <Link href="/terms">terms and
+                                                contitions</Link> </span>
                                     </label>
                                 </div> 
                             </form>
