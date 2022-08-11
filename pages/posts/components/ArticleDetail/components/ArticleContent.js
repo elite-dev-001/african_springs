@@ -76,7 +76,7 @@ function ArticleContent(props) {
             {link ? <ReactPlayer style={{marginBottom: '6em'}} width='100%' height='200px' url={link} controls={true} /> : null}
             <a href={link}> {link} </a>
          </div>
-        <p className="has-drop-cap-fluid" style={{ whiteSpace: 'pre-wrap' }}> {news} </p>
+        <p className="has-drop-cap-fluid" style={{ whiteSpace: 'pre-wrap' }}> {news.trim()} </p>
     </div>
   )
 }
