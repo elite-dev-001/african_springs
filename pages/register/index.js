@@ -150,7 +150,7 @@ function Register() {
                                 <div className="form-group">
                                     <label className="custom-control custom-checkbox"> <input type="checkbox" required
                                             className="custom-control-input"  />
-                                        <span className="custom-control-label"> I am agree with <Link href="/terms">terms and
+                                        <span className="custom-control-label"> I agree with <Link href="/terms">terms and
                                                 contitions</Link> </span>
                                     </label>
                                 </div> 

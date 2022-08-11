@@ -17,7 +17,7 @@ function Footer() {
                                         <img src="images/logo2.png" alt="" className="logo-footer" />
                                     </figure> */}
                                     <p>
-                                        AfricanSprings is a premium News website. With Organized Niche from the heart of africa, with an extraordinary stories across the world, with the heart of humanity, for enlightenment, entertainment and information.
+                                    AfricanSprings is a premium News website. With organized niche from the heart of Africa, with extraordinary stories across the world, with the heart of humanity, for enlightenment, entertainment and information.
                                         <br />
                                         {/* <!-- <Link href=" #" className="btn btn-primary mt-4 text-white">About us</Link> --> */}
                                     </p>
@@ -55,39 +55,39 @@ function Footer() {
                                     <div className="link__category">
                                         <ul className="list-unstyled ">
                                             <li className="list-inline-item">
-                                                <Link href="/category/sport">sports</Link>
+                                                <Link href="/categories/sport">sports</Link>
                                             </li>
                                             <li className="list-inline-item">
-                                                <Link href="/category/health">health</Link>
+                                                <Link href="/categories/health">health</Link>
                                             </li>
                                             <li className="list-inline-item">
-                                                <Link href="/category/lifestyle">lifestyle</Link>
+                                                <Link href="/categories/lifestyle">lifestyle</Link>
                                             </li>
                                             <li className="list-inline-item">
-                                                <Link href="/category/business">business</Link>
-                                            </li>
-
-                                            <li className="list-inline-item">
-                                                <Link href="/category/healthy living">healthy living</Link>
-                                            </li>
-                                            <li className="list-inline-item">
-                                                <Link href="/category/entertainment">entertainment</Link>
-                                            </li>
-                                            <li className="list-inline-item">
-                                                <Link href="/category/politics">politics</Link>
-                                            </li>
-                                            <li className="list-inline-item">
-                                                <Link href="/category/article">article</Link>
-                                            </li>
-                                            <li className="list-inline-item">
-                                                <Link href="/category/">travel</Link>
+                                                <Link href="/categories/business">business</Link>
                                             </li>
 
                                             <li className="list-inline-item">
-                                                <Link href="/category/food">food</Link>
+                                                <Link href="/categories/healthy living">healthy living</Link>
                                             </li>
                                             <li className="list-inline-item">
-                                                <Link href="/category/news update">news update</Link>
+                                                <Link href="/categories/entertainment">entertainment</Link>
+                                            </li>
+                                            <li className="list-inline-item">
+                                                <Link href="/categories/politics">politics</Link>
+                                            </li>
+                                            <li className="list-inline-item">
+                                                <Link href="/categories/article">article</Link>
+                                            </li>
+                                            <li className="list-inline-item">
+                                                <Link href="/categories/travel">travel</Link>
+                                            </li>
+
+                                            <li className="list-inline-item">
+                                                <Link href="/categories/food">food</Link>
+                                            </li>
+                                            <li className="list-inline-item">
+                                                <Link href="/categories/news update">news update</Link>
                                             </li>
 
                                             {/* <li className="list-inline-item">

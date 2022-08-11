@@ -19,7 +19,7 @@ function Category() {
     console.log(category)
     axios.get(`https://africanspringsapi.herokuapp.com/api/post/get/all/news?category=${category}&limit=10`).then((res) => {
       const data = Array.from(res.data['results'])
-
+      console.log(data)
       setCategories(data.filter((cat) => cat['category'].replace(/\s+/g, '').toLowerCase() === category.replace(/\s+/g, '').toLowerCase()))
     }).catch((err) => {
       console.log(err)

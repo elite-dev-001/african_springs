@@ -47,7 +47,7 @@ function CategoryAside() {
 
 
   useEffect(() => {
-    setCategories([{name: "sports", category: sports}, {name: "health", category: health}, {name: "lifestyle", category: lifeStyle}, {name: "business", category: business}, {name: "living", category: living}, {name: "entertainment", category: entertainment}, {name: "politics", category: politic}, {name: "article", category: article}, {name: "travel", category: travel}, {name: "food", category: food}, {name: "news update", category: newsUpdate}])
+    setCategories([{name: "sport", category: sports}, {name: "health", category: health}, {name: "lifestyle", category: lifeStyle}, {name: "business", category: business}, {name: "healthy living", category: living}, {name: "entertainment", category: entertainment}, {name: "politics", category: politic}, {name: "article", category: article}, {name: "travel", category: travel}, {name: "food", category: food}, {name: "news update", category: newsUpdate}])
 
     
 }, [sports, health, lifeStyle, business, living, entertainment, politic, article, travel, food, newsUpdate])
