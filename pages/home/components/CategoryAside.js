@@ -31,7 +31,7 @@ function CategoryAside() {
       {category:'article', function: setArticle},
       {category:'travel', function: setTravel,},
       {category:'food', function: setFood},
-      {category:'newsUpdate', function: setNewsUpdate},
+      {category:'news Update', function: setNewsUpdate},
     ]
 
     useAsync(async() => {
@@ -60,7 +60,7 @@ function CategoryAside() {
             <ul className='list-unstyled'>
                 {
                     categories.map((obj, index) => <li key={index}>
-                        <a href={`/category/${obj.name}`}>
+                        <a href={`/categories/${obj.name}`}>
                             {obj.name}
                             <span className='badge' > {obj.category.length} </span>
                         </a>

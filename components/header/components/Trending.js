@@ -6,17 +6,18 @@ import Link  from 'next/link'
 import Slider from "react-slick";
 // import Article from './trending/Article'
 
-function Trending({trending}) {
-    // const [trending, setTrending] = useState([])
+function Trending() {
+    
+    const [trending, setTrending] = useState([])
 
-    // useEffect(() => {
-    //     axios.get('https://africanspringsapi.herokuapp.com/api/post/get/all/news?trend=true').then((res) => {
-    //         const allPost = Array.from(res.data['results']).reverse()
-    //         setTrending(allPost)
-    //     }).catch((err) => {
-    //         console.log(err)
-    //     })
-    // }, [])
+    useEffect(() => {
+        axios.get('https://africanspringsapi.herokuapp.com/api/post/get/all/news?trend=true').then((res) => {
+            const allPost = Array.from(res.data['results']).reverse()
+            setTrending(allPost)
+        }).catch((err) => {
+            console.log(err)
+        })
+    }, [])
 
     const setting = {
         dots: false,
@@ -47,7 +48,7 @@ function Trending({trending}) {
                                     <Slider {...setting} >
                                     {
                                     trending?.map((post, index) => <div className='slick-slide slick-cloned item-single' key={index}>
-                                        <a href={`/posts/${post['_id']}?category=${post['category']}`}> {post['title']} </a>
+                                        <Link href="/"> {post['title']} </Link>
                                     </div>)
                                     }
                                     </Slider>
@@ -63,37 +64,5 @@ function Trending({trending}) {
   )
 }
 
+
 export default Trending
-
-// export async function getStaticPaths() {
-    
-//     const res = await fetch('https://africanspringsapi.herokuapp.com/api/post/get/all/news?trend=true')
-//     const data = await res.json()
-  
-  
-//     const paths = data['results'].map(post => {
-//       return {
-//         params: {pid: post._id.toString()}
-//       }
-//     })
-  
-    
-  
-//     return {
-//       paths,
-//       fallback: false,
-//     }
-//   }
-
-  export async function getStaticProps() {
-    // console.log('params', params)
-    const res = await fetch('https://africanspringsapi.herokuapp.com/api/post/get/all/news?trend=true')
-    const post = await res.json()
-    // console.log('post',post)
-  
-    // console.log(articles)
-  
-    return {
-      props: {trending: post}
-    }
-  }

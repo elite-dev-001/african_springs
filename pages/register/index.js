@@ -27,6 +27,7 @@ function Register() {
                     setLoading(false)
                 } else {
                     setLoading(false)
+                    window.location.href = '/login'
                     // navigate('/login')
                 }
             }).catch((err) => {

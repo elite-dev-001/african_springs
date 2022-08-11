@@ -17,7 +17,7 @@ function Footer() {
                                         <img src="images/logo2.png" alt="" className="logo-footer" />
                                     </figure> */}
                                     <p>
-                                        AfricanSprings is a premium News website. We Organized Niche from the heart of africa, with an extraordinary stories across the world, with the heart of humanity, for enlightenment, entertainment and information.
+                                        AfricanSprings is a premium News website. With Organized Niche from the heart of africa, with an extraordinary stories across the world, with the heart of humanity, for enlightenment, entertainment and information.
                                         <br />
                                         {/* <!-- <Link href=" #" className="btn btn-primary mt-4 text-white">About us</Link> --> */}
                                     </p>

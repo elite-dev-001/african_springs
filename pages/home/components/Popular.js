@@ -23,6 +23,7 @@ function Popular() {
 
 
     const [health, setHealth] = useState([])
+    const [travel, setTravel] = useState([])
 
     useEffect(() => {
         axios.get('https://africanspringsapi.herokuapp.com/api/post/get/all/news?trend=true').then((res) => {
@@ -47,9 +48,16 @@ function Popular() {
         })
 
         
-        axios.get('https://africanspringsapi.herokuapp.com/api/post/get/all/news?category=health&limit=5').then((res) => {
+        axios.get('https://africanspringsapi.herokuapp.com/api/post/get/all/news?category=news%20update&limit=5').then((res) => {
             const allPost = Array.from(res.data['results'])
             setHealth(allPost)
+        }).catch((err) => {
+            console.log(err)
+        })
+
+        axios.get('https://africanspringsapi.herokuapp.com/api/post/get/all/news?category=travel&limit=5').then((res) => {
+            const allPost = Array.from(res.data['results'])
+            setTravel(allPost)
         }).catch((err) => {
             console.log(err)
         })
@@ -198,9 +206,15 @@ function Popular() {
                     </aside>
                     <div className='sidebar-section'>
                         <aside className='wrapper__list__article'>
-                            <h4>trending health</h4>
+                            <h4>news update</h4>
                             {
                                 health.map((post, index) => <Health key={index} category={post['category']} postId={post['_id']} author={post['author']} date={post['date']}  title={post['title'].slice(0, 65)} />)
+                            }
+                        </aside>
+                        <aside className='wrapper__list__article'>
+                            <h4>travel</h4>
+                            {
+                                travel.map((post, index) => <Health key={index} category={post['category']} postId={post['_id']} author={post['author']} date={post['date']}  title={post['title'].slice(0, 65)} />)
                             }
                         </aside>
                         <CategoryAside />
