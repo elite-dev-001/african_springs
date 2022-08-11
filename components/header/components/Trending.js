@@ -12,7 +12,7 @@ function Trending() {
 
     useEffect(() => {
         axios.get('https://africanspringsapi.herokuapp.com/api/post/get/all/news?trend=true').then((res) => {
-            const allPost = Array.from(res.data['results']).reverse()
+            const allPost = Array.from(res.data['results'])
             setTrending(allPost)
         }).catch((err) => {
             console.log(err)
@@ -48,7 +48,7 @@ function Trending() {
                                     <Slider {...setting} >
                                     {
                                     trending?.map((post, index) => <div className='slick-slide slick-cloned item-single' key={index}>
-                                        <Link href="/"> {post['title']} </Link>
+                                        <a href={`/posts/${post['_id']}?category=${post['category']}`}> {post['title']} </a>
                                     </div>)
                                     }
                                     </Slider>
