@@ -8,14 +8,14 @@ import { useRouter } from 'next/router'
 // import { SuperSEO } from 'react-super-seo'
 
 function ArticleContent(props) {
-    const {link, title, data, news} = props
+    const {link, title, data, news, videoLink, img} = props
     const [update, setUpdate] = useState('')
     // const [curr, setNews] = useState(`${news.trim()}`)
     const router = useRouter()
     // console.log(router.asPath)
     const host = 'https://www.africansprings.org';
     const url = `${host}${router.asPath}`
-    // console.log(url)
+    // console.log(data)
 
     useEffect(() => {
         if(news !== undefined){
@@ -77,6 +77,18 @@ function ArticleContent(props) {
             <a href={link}> {link} </a>
          </div>
         <p className="has-drop-cap-fluid" style={{ whiteSpace: 'pre-wrap' }}> {update} </p>
+        {
+            videoLink ? <a href={videoLink}> {videoLink} </a> : null
+        }
+        {img ? <div className='card__post-carousel'>
+            <div className="wrap__article-detail-image mt-4 card__post">
+                <div className='card__post__body'>
+                    <figure>
+                        <img src={img} alt="" className="img-fluid"/>
+                    </figure>
+                </div>
+            </div>
+        </div> : null}
     </div>
   )
 }

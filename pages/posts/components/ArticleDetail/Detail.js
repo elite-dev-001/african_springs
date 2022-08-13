@@ -14,7 +14,7 @@ function Detail(props) {
         <hr />
         <ArticleInfo thumb={data?.posterImage} author={data?.author} date={data?.date} category={data?.category}  />
         <ArticleImage img={data?.thumbnail} />
-        <ArticleContent news={data?.news} data={data} title={data?.title} link={data?.link} />
+        <ArticleContent news={data?.news} data={data} videoLink={data?.videoLink} title={data?.title} link={data?.link} img={data?.thumbnail2} />
     </div>
   )
 }
