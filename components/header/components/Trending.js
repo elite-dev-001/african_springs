@@ -11,7 +11,7 @@ function Trending() {
     const [trending, setTrending] = useState([])
 
     useEffect(() => {
-        axios.get('https://africanspringsapi.herokuapp.com/api/post/get/all/news?trend=true').then((res) => {
+        axios.get('https://vast-ruby-cheetah-cape.cyclic.app/api/post/get/all/news?trend=true').then((res) => {
             const allPost = Array.from(res.data['results'])
             setTrending(allPost)
         }).catch((err) => {

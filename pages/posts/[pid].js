@@ -61,7 +61,7 @@ export default function SinglePosts({post}) {
 export async function getStaticPaths() {
   // const context = useContext()
   // const pid = context.params.pid
-  const res = await fetch(`https://africanspringsapi.herokuapp.com/api/post/get/all/news`)
+  const res = await fetch(`https://vast-ruby-cheetah-cape.cyclic.app/api/post/get/all/news`)
   const data = await res.json()
   // const data = datas
 
@@ -84,7 +84,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   // console.log('params', params)
-  const res = await fetch(`https://africanspringsapi.herokuapp.com/api/post/get/single/post/${params['pid']}`)
+  const res = await fetch(`https://vast-ruby-cheetah-cape.cyclic.app/api/post/get/single/post/${params['pid']}`)
   const post = await res.json()
   // console.log('post',post)
 

@@ -36,7 +36,7 @@ function CategoryAside() {
 
     useAsync(async() => {
       myCategories.forEach((data) => {
-        axios.get(`https://africanspringsapi.herokuapp.com/api/post/get/all/news?category=${data.category}`).then((res) => {
+        axios.get(`https://vast-ruby-cheetah-cape.cyclic.app/api/post/get/all/news?category=${data.category}`).then((res) => {
             const allPost = Array.from(res.data['results'])
             data.function(allPost)
         }).catch((err) => {

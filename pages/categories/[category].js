@@ -17,7 +17,7 @@ function Category() {
     if(category !== undefined) {
         const x = category.replace(/\s+/g, '');
     console.log(category)
-    axios.get(`https://africanspringsapi.herokuapp.com/api/post/get/all/news?category=${category}&limit=10`).then((res) => {
+    axios.get(`https://vast-ruby-cheetah-cape.cyclic.app/api/post/get/all/news?category=${category}&limit=10`).then((res) => {
       const data = Array.from(res.data['results'])
       console.log(data)
       setCategories(data.filter((cat) => cat['category'].replace(/\s+/g, '').toLowerCase() === category.replace(/\s+/g, '').toLowerCase()))
