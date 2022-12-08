@@ -69,7 +69,7 @@ export async function getStaticPaths() {
   // console.log(data)
 
 
-  const paths = data['results'].map(post => {
+  const paths = (data['results'] || []).map(post => {
     return {
       params: {pid: post._id.toString()}
     }
