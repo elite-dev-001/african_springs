@@ -61,7 +61,8 @@ export default function SinglePosts({post}) {
 export async function getStaticPaths() {
   // const context = useContext()
   // const pid = context.params.pid
-  const res = await fetch(`https://vast-ruby-cheetah-cape.cyclic.app/api/post/get/all/news?category=sports`)
+  const res = await fetch(`https://vast-ruby-cheetah-cape.cyclic.app/api/post/get/all/news?category=food
+  `)
   const data = await res.json()
   // const data = datas
 
