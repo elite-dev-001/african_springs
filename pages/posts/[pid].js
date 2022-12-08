@@ -62,14 +62,18 @@ export async function getStaticPaths() {
   // const context = useContext()
   // const pid = context.params.pid
   const res = await fetch(`https://vast-ruby-cheetah-cape.cyclic.app/api/post/get/all/news
-  `)
+  `, {
+    headers: {
+      "x-cyclic": "cron"
+    }
+  })
   const data = await res.json()
   // const data = datas
 
   // console.log(data)
 
 
-  const paths = (data['results'] || []).map(post => {
+  const paths = (data['results']).map(post => {
     return {
       params: {pid: post._id.toString()}
     }
