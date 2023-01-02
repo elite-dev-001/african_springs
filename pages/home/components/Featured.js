@@ -7,7 +7,7 @@ function Featured() {
     const [featured, setFeatured] = useState([])
 
     useEffect(() => {
-        axios.get('https://vast-ruby-cheetah-cape.cyclic.app/api/post/get/all/news?featured=true').then((res) => {
+        axios.get('https://africansprings-api.onrender.com/api/post/get/all/news?featured=true').then((res) => {
             // console.log(res.data['results'])
             const allPost = Array.from(res.data['results']).reverse()
             setFeatured(allPost)
