@@ -62,11 +62,7 @@ export async function getStaticPaths() {
   // const context = useContext()
   // const pid = context.params.pid
   const res = await fetch(`https://africansprings-api.onrender.com/api/post/get/all/news
-  `, {
-    headers: {
-      "x-cyclic": "cron"
-    }
-  })
+  `,)
   const data = await res.json()
   // const data = datas
 
