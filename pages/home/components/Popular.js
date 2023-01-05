@@ -26,21 +26,21 @@ function Popular() {
     const [travel, setTravel] = useState([])
 
     useEffect(() => {
-        axios.get('https://african-springs-api.vercel.app/api/post/get/all/news?trend=true').then((res) => {
+        axios.get('https://africansprings-api.onrender.com/api/post/get/all/news?trend=true').then((res) => {
             const allPost = Array.from(res.data['results'])
             setTrend(allPost)
         }).catch((err) => {
             console.log(err)
         })
 
-        axios.get('https://african-springs-api.vercel.app/api/post/get/all/news?limit=10').then((res) => {
+        axios.get('https://africansprings-api.onrender.com/api/post/get/all/news?limit=10').then((res) => {
             const allPost = Array.from(res.data['results'])
             setLatestPost(allPost)
         }).catch((err) => {
             console.log(err)
         })
 
-        axios.get('https://african-springs-api.vercel.app/api/post/get/all/news?category=politics&limit=10').then((res) => {
+        axios.get('https://africansprings-api.onrender.com/api/post/get/all/news?category=politics&limit=10').then((res) => {
             const allPost = Array.from(res.data['results'])
             setPolitics(allPost)
         }).catch((err) => {
@@ -48,14 +48,14 @@ function Popular() {
         })
 
         
-        axios.get('https://african-springs-api.vercel.app/api/post/get/all/news?category=news%20update&limit=5').then((res) => {
+        axios.get('https://africansprings-api.onrender.com/api/post/get/all/news?category=news%20update&limit=5').then((res) => {
             const allPost = Array.from(res.data['results'])
             setHealth(allPost)
         }).catch((err) => {
             console.log(err)
         })
 
-        axios.get('https://african-springs-api.vercel.app/api/post/get/all/news?category=travel&limit=5').then((res) => {
+        axios.get('https://africansprings-api.onrender.com/api/post/get/all/news?category=travel&limit=5').then((res) => {
             const allPost = Array.from(res.data['results'])
             setTravel(allPost)
         }).catch((err) => {

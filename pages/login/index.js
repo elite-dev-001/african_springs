@@ -20,7 +20,7 @@ function Login() {
     const onSubmit = (data) => {
         setLoading(true)
         console.log(data)
-            axios.post('https://african-springs-api.vercel.app/api/login', data).then((res) => {
+            axios.post('https://africansprings-api.onrender.com/api/login', data).then((res) => {
             console.log(res)
             
             if(res.data['status'] === 'error') {
@@ -58,7 +58,7 @@ function Login() {
 
     const getUser = (id, token, role, value) => {
         
-        axios.get(`https://african-springs-api.vercel.app/api/${value}/get/one/${id}`,{headers: {'Authorization': `Bearer ${token}`}}).then((res) => {
+        axios.get(`https://africansprings-api.onrender.com/api/${value}/get/one/${id}`,{headers: {'Authorization': `Bearer ${token}`}}).then((res) => {
             console.log(res.data)
             const userData = JSON.stringify(res.data[0])
             localStorage.setItem('loginState', true)
