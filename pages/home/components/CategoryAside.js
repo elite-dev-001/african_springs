@@ -36,7 +36,7 @@ function CategoryAside() {
 
     useAsync(async() => {
       myCategories.forEach((data) => {
-        axios.get(`https://africansprings-api.onrender.com/api/post/get/all/news?category=${data.category}`).then((res) => {
+        axios.get(`https://african-springs-api.vercel.app/api/post/get/all/news?category=${data.category}`).then((res) => {
             const allPost = Array.from(res.data['results'])
             data.function(allPost)
         }).catch((err) => {

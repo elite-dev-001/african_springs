@@ -21,7 +21,7 @@ function Register() {
         if(data['password'] === data['confirmPassword']){
             setError('')
             console.log(data)
-            axios.post('https://africansprings-api.onrender.com/api/user/register', data).then((res) => {
+            axios.post('https://african-springs-api.vercel.app/api/user/register', data).then((res) => {
                 console.log(res.data)
                 if(res.data['status'] === 'error'){
                     setError(res.data['error'])

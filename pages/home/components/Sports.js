@@ -10,7 +10,7 @@ function Sports() {
     const [sports, setSports] = useState([])
 
     useEffect(() => {
-        axios.get('https://africansprings-api.onrender.com/api/post/get/all/news?category=sport&limit=4').then((res) => {
+        axios.get('https://african-springs-api.vercel.app/api/post/get/all/news?category=sport&limit=4').then((res) => {
             const allPost = Array.from(res.data['results']).reverse()
             setSports(allPost)
         }).catch((err) => {
