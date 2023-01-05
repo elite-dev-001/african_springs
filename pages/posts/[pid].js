@@ -92,6 +92,7 @@ export async function getStaticProps({ params }) {
   // console.log(articles)
 
   return {
-    props: {post: post[0]}
+    props: {post: post[0]},
+    revalidate: 1
   }
 }
