@@ -65,39 +65,39 @@ export default function Comment(props) {
 
 
   return (
-    <div id="comments" class="comments-area">
-        <h3 class="comments-title">{comments.length} Comments:</h3>
+    <div id="comments" className="comments-area">
+        <h3 className="comments-title">{comments.length} Comments:</h3>
 
-        <ol class="comment-list">
+        <ol className="comment-list">
             {
-                comments.length === 0 ? <h3 style={{marginBottom: '1em'}} class="comment-reply-title">No Comments Yet. Be the first to comment</h3> : Array.from(comments).map((comment, index) => <Comments key={index} profile={comment['profile']} name={comment['name']} date={comment['date']} text={comment['text']} email={comment['email']} replies={comment['replys']} index={index} id={id} />)
+                comments.length === 0 ? <h3 style={{marginBottom: '1em'}} className="comment-reply-title">No Comments Yet. Be the first to comment</h3> : Array.from(comments).map((comment, index) => <Comments key={index} profile={comment['profile']} name={comment['name']} date={comment['date']} text={comment['text']} email={comment['email']} replies={comment['replys']} index={index} id={id} />)
             }
         </ol>
 
-        <div class="comment-respond">
-            <h3 class="comment-reply-title">Leave a Comment</h3>
+        <div className="comment-respond">
+            <h3 className="comment-reply-title">Leave a Comment</h3>
 
-            <form class="comment-form" onSubmit={handleSubmit(onSubmit)}>
-                <p class="comment-notes">
+            <form className="comment-form" onSubmit={handleSubmit(onSubmit)}>
+                <p className="comment-notes">
                     <span id="email-notes">Your email address will not be published.</span>
                     Required fields are marked
-                    <span class="required">*</span>
+                    <span className="required">*</span>
                 </p>
-                <p class="comment-form-comment">
+                <p className="comment-form-comment">
                     <label htnlFor="comment">Comment</label>
                     <textarea {...register('text')} cols="45" rows="5" maxLength="65525"
                         required="required" />
                 </p>
-                <p class="comment-form-author">
-                    <label>Name <span class="required">*</span></label>
+                <p className="comment-form-author">
+                    <label>Name <span className="required">*</span></label>
                     <input value={isLoggedIn ? name : ''} type="text" id="author" name="name"/>
                 </p>
-                <p class="comment-form-email">
-                    <label htnlFor="email">Email <span class="required">*</span></label>
+                <p className="comment-form-email">
+                    <label htnlFor="email">Email <span className="required">*</span></label>
                     <input value={isLoggedIn ? email : ''} type="email" id="email" name="email"/>
                 </p>
-                {loading ? <SpinnerRoundFilled color='red' enabled={loading} /> : <p class="form-submit">
-                    <input type="submit" name="submit" id="submit" class="submit" value="Post Comment" />
+                {loading ? <SpinnerRoundFilled color='red' enabled={loading} /> : <p className="form-submit">
+                    <input type="submit" name="submit" id="submit" className="submit" value="Post Comment" />
                 </p>}
                 <p style={{color: 'red', textAlign: 'center', textTransform: 'capitalize'}}> {err} </p>
             </form>
@@ -163,34 +163,34 @@ function Comments(props) {
     }
 
     
-    return <li class="comment">
-        <aside class="comment-body">
-            <div class="comment-meta">
-                <div class="comment-author vcard">
-                    <img src={profile} class="avatar" alt="image" />
-                    <b class="fn">{name}</b>
-                    <span class="says">says:</span>
+    return <li className="comment">
+        <aside className="comment-body">
+            <div className="comment-meta">
+                <div className="comment-author vcard">
+                    <img src={profile} className="avatar" alt="image" />
+                    <b className="fn">{name}</b>
+                    <span className="says">says:</span>
                 </div>
 
-                <div class="comment-metadata">
+                <div className="comment-metadata">
                     <a href="#">
                         <span>{date}</span>
                     </a>
                 </div>
             </div>
 
-            <div class="comment-content">
+            <div className="comment-content">
                 <p>{parse(text)}</p>
             </div>
 
-            <div style={{cursor: 'pointer', marginBottom: '1em'}} class="reply" onClick={() => onReply(index)}>
-                <a class="comment-reply-link">Reply</a>
+            <div style={{cursor: 'pointer', marginBottom: '1em'}} className="reply" onClick={() => onReply(index)}>
+                <a className="comment-reply-link">Reply</a>
             </div>
 
             {myIndex === index ? <form onSubmit={handleSubmit(myReply)}>
-                <input {...register('text')} className="form-control" placeholder="Reply" required/>
-                <div style={{cursor: 'pointer', marginBottom: '1em'}} class="reply">
-                <input type="submit" id="submit" class="submit" value="Submit" />
+                <input {...register('text')} classNameName="form-control" placeholder="Reply" required/>
+                <div style={{cursor: 'pointer', marginBottom: '1em'}} className="reply">
+                <input type="submit" id="submit" className="submit" value="Submit" />
             </div>
             </form>
                     : null} 
@@ -259,35 +259,35 @@ function Replies(props) {
         }
     }
 
-    return <ol class="children">
-    <li class="comment">
-        <aside class="comment-body">
-            <div class="comment-meta">
-                <div class="comment-author vcard">
-                    <img src={profile} class="avatar" alt="image" />
-                    <b class="fn">{name}</b>
-                    <span class="says">says:</span>
+    return <ol className="children">
+    <li className="comment">
+        <aside className="comment-body">
+            <div className="comment-meta">
+                <div className="comment-author vcard">
+                    <img src={profile} className="avatar" alt="image" />
+                    <b className="fn">{name}</b>
+                    <span className="says">says:</span>
                 </div>
 
-                <div class="comment-metadata">
+                <div className="comment-metadata">
                     <a href="#">
                         <span>{date}</span>
                     </a>
                 </div>
             </div>
 
-            <div class="comment-content">
+            <div className="comment-content">
                 <p>{parse(text)}</p>
             </div>
 
-            <div style={{cursor: 'pointer', marginBottom: '1em'}} class="reply" onClick={() => onReply(index)}>
-                <a class="comment-reply-link">Reply</a>
+            <div style={{cursor: 'pointer', marginBottom: '1em'}} className="reply" onClick={() => onReply(index)}>
+                <a className="comment-reply-link">Reply</a>
             </div>
 
             {myIndex === index ? <form onSubmit={handleSubmit(myReply)}>
-                <input {...register('text')} className="form-control" placeholder="Reply" required/>
-                <div style={{cursor: 'pointer', marginBottom: '1em'}} class="reply">
-                <input type="submit" id="submit" class="submit" value="Submit" />
+                <input {...register('text')} classNameName="form-control" placeholder="Reply" required/>
+                <div style={{cursor: 'pointer', marginBottom: '1em'}} className="reply">
+                <input type="submit" id="submit" className="submit" value="Submit" />
             </div>
             </form>
                     : null} 
