@@ -14,7 +14,7 @@ export default function Comment(props) {
     const [loading, setLoading] = useState(false)
 
     const comments = props.comment;
-    console.log(comments)
+    // console.log(comments)
     const id = props.id;
 
 
@@ -27,14 +27,14 @@ export default function Comment(props) {
     useEffect(() => {
         const loginState = localStorage.getItem('loginState')
         setLogin(loginState)
-        console.log(loginState)
+        // console.log(loginState)
     
         if(isLoggedIn) {
             const userData = JSON.parse(localStorage.getItem('userData'))
             setName(`${userData['firstName']} ${userData['lastName']}`)
             setEmail(userData['email'])
             setProfile(userData['profile'])
-            console.log('Logged In')
+            // console.log('Logged In')
         }
       }, [isLoggedIn])
 
@@ -48,7 +48,7 @@ export default function Comment(props) {
             data.profile = profile;
             data.date = new Date().toUTCString();
             data.replys = [];
-            console.log(data)
+            // console.log(data)
             
             axios.patch(`https://africansprings-api.onrender.com/api/post/update/comments/${id}`, {reply: false, message: data}).then((res) => {
                 window.location.reload()
@@ -84,20 +84,20 @@ export default function Comment(props) {
                     <span className="required">*</span>
                 </p>
                 <p className="comment-form-comment">
-                    <label htnlFor="comment">Comment</label>
+                    <label htmlFor="comment">Comment</label>
                     <textarea {...register('text')} cols="45" rows="5" maxLength="65525"
                         required="required" />
                 </p>
                 <p className="comment-form-author">
                     <label>Name <span className="required">*</span></label>
-                    <input value={isLoggedIn ? name : ''} type="text" id="author" name="name"/>
+                    <input defaultValue={isLoggedIn ? name : ''} type="text" id="author" name="name"/>
                 </p>
                 <p className="comment-form-email">
-                    <label htnlFor="email">Email <span className="required">*</span></label>
-                    <input value={isLoggedIn ? email : ''} type="email" id="email" name="email"/>
+                    <label htmlFor="email">Email <span className="required">*</span></label>
+                    <input defaultValue={isLoggedIn ? email : ''} type="email" id="email" name="email"/>
                 </p>
                 {loading ? <SpinnerRoundFilled color='red' enabled={loading} /> : <p className="form-submit">
-                    <input type="submit" name="submit" id="submit" className="submit" value="Post Comment" />
+                    <input type="submit" name="submit" id="submit" className="submit" defaultValue="Post Comment" />
                 </p>}
                 <p style={{color: 'red', textAlign: 'center', textTransform: 'capitalize'}}> {err} </p>
             </form>
@@ -122,14 +122,14 @@ function Comments(props) {
     useEffect(() => {
         const loginState = localStorage.getItem('loginState')
         setLogin(loginState)
-        console.log(loginState)
+        // console.log(loginState)
 
         if(isLoggedIn) {
             const userData = JSON.parse(localStorage.getItem('userData'))
             setName(`${userData['firstName']} ${userData['lastName']}`)
             setEmail(userData['email'])
             setProfile(userData['profile'])
-            console.log('Logged In')
+            // console.log('Logged In')
         }
       }, [isLoggedIn])
 
@@ -148,7 +148,7 @@ function Comments(props) {
             data.date = new Date().toUTCString();
             data.replys = [];
             data.text = `<b>${name}</b> ${data.text}`;
-            console.log(data)
+            // console.log(data)
             
             axios.patch(`https://africansprings-api.onrender.com/api/post/update/comments/${id}`, {reply: true, message: data, index: myIndex}).then((res) => {
                 window.location.reload()
@@ -190,7 +190,7 @@ function Comments(props) {
             {myIndex === index ? <form onSubmit={handleSubmit(myReply)}>
                 <input {...register('text')} classNameName="form-control" placeholder="Reply" required/>
                 <div style={{cursor: 'pointer', marginBottom: '1em'}} className="reply">
-                <input type="submit" id="submit" className="submit" value="Submit" />
+                <input type="submit" id="submit" className="submit" defaultValue="Submit" />
             </div>
             </form>
                     : null} 
@@ -223,14 +223,14 @@ function Replies(props) {
     useEffect(() => {
         const loginState = localStorage.getItem('loginState')
         setLogin(loginState)
-        console.log(loginState)
+        // console.log(loginState)
 
         if(isLoggedIn) {
             const userData = JSON.parse(localStorage.getItem('userData'))
             setName(`${userData['firstName']} ${userData['lastName']}`)
             setEmail(userData['email'])
             setProfile(userData['profile'])
-            console.log('Logged In')
+            // console.log('Logged In')
         }
       }, [isLoggedIn])
 
@@ -244,8 +244,8 @@ function Replies(props) {
             data.date = new Date().toUTCString();
             data.replys = [];
             data.text = `<b>${name}</b> ${data.text}`;
-            console.log(data)
-            console.log(name)
+            // console.log(data)
+            // console.log(name)
             
             axios.patch(`https://africansprings-api.onrender.com/api/post/update/comments/${id}`, {reply: true, message: data, index: replyIndex}).then((res) => {
                 window.location.reload()
@@ -287,7 +287,7 @@ function Replies(props) {
             {myIndex === index ? <form onSubmit={handleSubmit(myReply)}>
                 <input {...register('text')} classNameName="form-control" placeholder="Reply" required/>
                 <div style={{cursor: 'pointer', marginBottom: '1em'}} className="reply">
-                <input type="submit" id="submit" className="submit" value="Submit" />
+                <input type="submit" id="submit" className="submit" defaultValue="Submit" />
             </div>
             </form>
                     : null} 
