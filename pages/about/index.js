@@ -52,9 +52,10 @@ export default function About() {
                         {/* <!-- team member --> */}
                         <div className="team-member row">
                             <div className="col-md-3">
-                                <figure className="member"> <img src="/images/about1.jpeg" className="img-fluid" alt="Image" />
+                                <figure className="member"> 
+                                {/* <img src="/images/about1.jpeg" className="img-fluid" alt="Image" /> */}
                                     <figcaption>
-                                        <h4>Isicheli Blessing</h4>
+                                        <h4>AfricanSprings Pioneer Isicheli Blessing</h4>
                                         <small>Editor</small>
                                         <ul className="list-inline">
                                             <li className="list-inline-item"><a href="#"><i className="fa fa-facebook"
@@ -71,9 +72,10 @@ export default function About() {
                                 </figure>
                             </div>
                             <div className="col-md-3">
-                                <figure className="member"> <img src="/images/about2.jpeg" className="img-fluid" alt="Image" />
+                                <figure className="member"> 
+                                {/* <img src="/images/about2.jpeg" className="img-fluid" alt="Image" /> */}
                                     <figcaption>
-                                        <h4>Jenifer Jackson</h4>
+                                        <h4>AfricanSprings Pioneer Jenifer Jackson</h4>
                                         <small>Editor</small>
                                         <ul className="list-inline">
                                             <li className="list-inline-item"><a href="#"><i className="fa fa-facebook"
@@ -90,9 +92,10 @@ export default function About() {
                                 </figure>
                             </div>
                             <div className="col-md-3">
-                                <figure className="member"> <img src="/images/about4.jpeg" className="img-fluid" alt="Image" />
+                                <figure className="member"> 
+                                {/* <img src="/images/about4.jpeg" className="img-fluid" alt="Image" /> */}
                                     <figcaption>
-                                        <h4>Oluchi Chineke</h4>
+                                        <h4>AfricanSprings Pioneer Oluchi Chineke</h4>
                                         <small>Publisher</small>
                                         <ul className="list-inline">
                                             <li className="list-inline-item"><a href="#"><i className="fa fa-facebook"
@@ -109,9 +112,10 @@ export default function About() {
                                 </figure>
                             </div>
                             <div className="col-md-3">
-                                <figure className="member"> <img src="/images/about6.jpeg" className="img-fluid" alt="Image" />
+                                <figure className="member"> 
+                                {/* <img src="/images/about6.jpeg" className="img-fluid" alt="Image" /> */}
                                     <figcaption>
-                                        <h4>Carolyne Cheskak</h4>
+                                        <h4>AfricanSprings Pioneer Carolyne Cheskak</h4>
                                         <small>Project Manager</small>
                                         <ul className="list-inline">
                                             <li className="list-inline-item"><a href="#"><i className="fa fa-facebook"

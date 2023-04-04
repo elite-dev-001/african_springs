@@ -21,6 +21,7 @@ export default function Comment(props) {
     const {
         register,
         handleSubmit,
+        reset
     } = useForm();
 
     useEffect(() => {
@@ -62,6 +63,7 @@ export default function Comment(props) {
             axios.patch(`https://africansprings-api.onrender.com/api/post/update/comments/${id}`, {reply: false, message: data}).then((res) => {
                 // window.location.reload()
                 setLoading(false);
+                reset();
             }).catch((err) => {
                 console.log(err)
                 setErr('Could not comment. Something went wrong')
