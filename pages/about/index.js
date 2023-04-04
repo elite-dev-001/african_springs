@@ -71,9 +71,9 @@ export default function About() {
                                     </figcaption>
                                 </figure>
                             </div>
-                            <div className="col-md-3">
+                            {/* <div className="col-md-3">
                                 <figure className="member"> 
-                                {/* <img src="/images/about2.jpeg" className="img-fluid" alt="Image" /> */}
+                                <img src="/images/about2.jpeg" className="img-fluid" alt="Image" />
                                     <figcaption>
                                         <h4>AfricanSprings Pioneer Jenifer Jackson</h4>
                                         <small>Editor</small>
@@ -90,10 +90,10 @@ export default function About() {
                                         </ul>
                                     </figcaption>
                                 </figure>
-                            </div>
-                            <div className="col-md-3">
+                            </div> */}
+                            {/* <div className="col-md-3">
                                 <figure className="member"> 
-                                {/* <img src="/images/about4.jpeg" className="img-fluid" alt="Image" /> */}
+                                <img src="/images/about4.jpeg" className="img-fluid" alt="Image" />
                                     <figcaption>
                                         <h4>AfricanSprings Pioneer Oluchi Chineke</h4>
                                         <small>Publisher</small>
@@ -110,10 +110,10 @@ export default function About() {
                                         </ul>
                                     </figcaption>
                                 </figure>
-                            </div>
-                            <div className="col-md-3">
+                            </div> */}
+                            {/* <div className="col-md-3">
                                 <figure className="member"> 
-                                {/* <img src="/images/about6.jpeg" className="img-fluid" alt="Image" /> */}
+                                <img src="/images/about6.jpeg" className="img-fluid" alt="Image" />
                                     <figcaption>
                                         <h4>AfricanSprings Pioneer Carolyne Cheskak</h4>
                                         <small>Project Manager</small>
@@ -130,7 +130,7 @@ export default function About() {
                                         </ul>
                                     </figcaption>
                                 </figure>
-                            </div>
+                            </div> */}
                         </div>
                         {/* <p>
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
