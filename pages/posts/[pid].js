@@ -52,7 +52,7 @@ export default function SinglePosts({post}) {
               <Detail data={post} />
               <Profile img={post['posterImage']} author={post['author']} />
               <Comment comment={post['comment']} id={post['_id']} />
-              <div class="clearfix"></div>
+              <div className="clearfix"></div>
               {/* <RelatedPost category={category.toLocaleLowerCase()} /> */}
             </div>
             <div className='col-md-4'></div>
