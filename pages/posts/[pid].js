@@ -6,6 +6,8 @@ import Detail from './components/ArticleDetail/Detail'
 import Profile from './components/Profile'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import Comment from './components/Comment'
+import RelatedPost from './components/RelatedPost'
 
 
 export default function SinglePosts({post}) {
@@ -49,6 +51,9 @@ export default function SinglePosts({post}) {
             <div className='col-md-8'>
               <Detail data={post} />
               <Profile img={post['posterImage']} author={post['author']} />
+              <Comment comment={post['comment']} id={post['_id']} />
+              <div class="clearfix"></div>
+              {/* <RelatedPost category={category.toLocaleLowerCase()} /> */}
             </div>
             <div className='col-md-4'></div>
           </div>
