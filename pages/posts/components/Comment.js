@@ -13,7 +13,7 @@ export default function Comment(props) {
     const [err, setErr] = useState('')
     const [loading, setLoading] = useState(false)
 
-    const comments = props.comment;
+    const comments = props.comment ?? [];
     // console.log(comments)
     const id = props.id;
 
