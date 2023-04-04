@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { SpinnerRoundFilled } from 'spinners-react';
+import { SpinnerCircular, SpinnerRoundFilled } from 'spinners-react';
 import axios from 'axios'
 import parse from 'html-react-parser'
 
@@ -12,16 +12,25 @@ export default function Comment(props) {
     const [profile, setProfile] = useState('')
     const [err, setErr] = useState('')
     const [loading, setLoading] = useState(false)
-
-    const comments = props.comment ?? [];
+    const [comments, setComments] = useState([])
     // console.log(comments)
     const id = props.id;
+    // console.log(id)
 
 
     const {
         register,
         handleSubmit,
     } = useForm();
+
+    useEffect(() => {
+        axios.get(`https://africansprings-api.onrender.com/api/post/get/single/post/${id}`).then((res) => {
+            setComments(res.data[0]['comment']);
+            // comments = res.data[0]
+        }).catch((err) => {
+            console.error(err)
+        })
+    })
 
 
     useEffect(() => {
@@ -51,7 +60,8 @@ export default function Comment(props) {
             // console.log(data)
             
             axios.patch(`https://africansprings-api.onrender.com/api/post/update/comments/${id}`, {reply: false, message: data}).then((res) => {
-                window.location.reload()
+                // window.location.reload()
+                setLoading(false);
             }).catch((err) => {
                 console.log(err)
                 setErr('Could not comment. Something went wrong')
@@ -118,6 +128,7 @@ function Comments(props) {
     const [replyName, setName] = useState('')
     const [replyEmail, setEmail] = useState('')
     const [replyProfile, setProfile] = useState('')
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const loginState = localStorage.getItem('loginState')
@@ -140,7 +151,7 @@ function Comments(props) {
 
     const myReply = (data) => {
         if(isLoggedIn){
-            // setLoading(true)
+            setLoading(true)
 
             data.name = replyName;
             data.email = replyEmail;
@@ -151,11 +162,13 @@ function Comments(props) {
             // console.log(data)
             
             axios.patch(`https://africansprings-api.onrender.com/api/post/update/comments/${id}`, {reply: true, message: data, index: myIndex}).then((res) => {
-                window.location.reload()
+                // window.location.reload()
+                setLoading(false)
+                setMyIndex(null);
             }).catch((err) => {
                 console.log(err)
                 // setErr('Could not comment. Something went wrong')
-                // setLoading(false)
+                setLoading(false)
             })
         } else {
             window.alert('Login to your account to be able to comment')
@@ -188,9 +201,9 @@ function Comments(props) {
             </div>
 
             {myIndex === index ? <form onSubmit={handleSubmit(myReply)}>
-                <input {...register('text')} classNameName="form-control" placeholder="Reply" required/>
+                <input {...register('text')} className="form-control" placeholder="Reply" required/>
                 <div style={{cursor: 'pointer', marginBottom: '1em'}} className="reply">
-                <input type="submit" id="submit" className="submit" defaultValue="Submit" />
+               {!loading ? <input type="submit" id="submit" className="submit" defaultValue="Submit" /> : <SpinnerCircular enabled={loading} />}
             </div>
             </form>
                     : null} 
@@ -219,6 +232,7 @@ function Replies(props) {
     const [replyName, setName] = useState('')
     const [replyEmail, setEmail] = useState('')
     const [replyProfile, setProfile] = useState('')
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         const loginState = localStorage.getItem('loginState')
@@ -236,7 +250,7 @@ function Replies(props) {
 
     const myReply = (data) => {
         if(isLoggedIn){
-            // setLoading(true)
+            setLoading(true)
 
             data.name = replyName;
             data.email = replyEmail;
@@ -248,11 +262,13 @@ function Replies(props) {
             // console.log(name)
             
             axios.patch(`https://africansprings-api.onrender.com/api/post/update/comments/${id}`, {reply: true, message: data, index: replyIndex}).then((res) => {
-                window.location.reload()
+                // window.location.reload()
+                setMyIndex(null)
+                setLoading(false);
             }).catch((err) => {
                 console.log(err)
                 // setErr('Could not comment. Something went wrong')
-                // setLoading(false)
+                setLoading(false)
             })
         } else {
             window.alert('Login to your account to be able to comment')
@@ -285,9 +301,9 @@ function Replies(props) {
             </div>
 
             {myIndex === index ? <form onSubmit={handleSubmit(myReply)}>
-                <input {...register('text')} classNameName="form-control" placeholder="Reply" required/>
+                <input {...register('text')} className="form-control" placeholder="Reply" required/>
                 <div style={{cursor: 'pointer', marginBottom: '1em'}} className="reply">
-                <input type="submit" id="submit" className="submit" defaultValue="Submit" />
+                {!loading ? <input type="submit" id="submit" className="submit" defaultValue="Submit" /> : <SpinnerCircular enabled={loading} />}
             </div>
             </form>
                     : null} 
