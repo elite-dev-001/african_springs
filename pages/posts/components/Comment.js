@@ -66,11 +66,11 @@ export default function Comment(props) {
 
   return (
     <div id="comments" className="comments-area">
-        <h3 className="comments-title">{comments.length} Comments:</h3>
+        <h3 className="comments-title">{comments?.length} Comments:</h3>
 
         <ol className="comment-list">
             {
-                comments.length === 0 ? <h3 style={{marginBottom: '1em'}} className="comment-reply-title">No Comments Yet. Be the first to comment</h3> : Array.from(comments).map((comment, index) => <Comments key={index} profile={comment['profile']} name={comment['name']} date={comment['date']} text={comment['text']} email={comment['email']} replies={comment['replys']} index={index} id={id} />)
+                comments?.length === 0 ? <h3 style={{marginBottom: '1em'}} className="comment-reply-title">No Comments Yet. Be the first to comment</h3> : Array.from(comments).map((comment, index) => <Comments key={index} profile={comment['profile']} name={comment['name']} date={comment['date']} text={comment['text']} email={comment['email']} replies={comment['replys']} index={index} id={id} />)
             }
         </ol>
 
@@ -196,7 +196,7 @@ function Comments(props) {
                     : null} 
         </aside>
         {
-            Array.from(replies).length === 0 ? null : Array.from(replies).map((reply, index) => <Replies key={index} profile={reply['profile']} name={reply['name']} date={reply['date']} text={reply['text']} email={reply['email']} index={index} replyIndex={replyIndex} id={id} />)
+            Array.from(replies)?.length === 0 ? null : Array.from(replies).map((reply, index) => <Replies key={index} profile={reply['profile']} name={reply['name']} date={reply['date']} text={reply['text']} email={reply['email']} index={index} replyIndex={replyIndex} id={id} />)
         }
     </li>
 }
